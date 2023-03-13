@@ -1,0 +1,1 @@
+config.filebrowserUploadUrl = '/ckeditor/upload_image';
