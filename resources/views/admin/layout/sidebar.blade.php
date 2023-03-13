@@ -14,7 +14,7 @@
             </div>
 
             <div class="menu-item">
-                <a href="{{ route('kegiatan.index') }}" class="menu-link {{ Request::is('admin/kegiatan') ? 'active' : '' }}">
+                <a href="{{ route('kegiatan.index') }}" class="menu-link {{ Request::is('admin/kegiatan/*') ? 'active' : '' }}">
                     <span class="menu-title">Kegiatan</span>
                     <span class="menu-badge">6,234</span>
                 </a>
@@ -28,11 +28,6 @@
                 </a>
             </div>
 
-            <div class="menu-item">
-                <a href="#" class="menu-link {{ Request::is('admin/kegiatan/*') ? 'active' : '' }}">
-                    <span class="menu-title">Kegiatan</span>
-                </a>
-            </div>
 
             <div class="menu-item pt-5">
                 <div class="menu-content pb-2">
