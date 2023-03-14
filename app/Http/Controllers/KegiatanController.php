@@ -47,10 +47,20 @@ class KegiatanController extends Controller
         $content = $dom->saveHTML();
         $fileUpload = new Kegiatan();
         $fileUpload->title = $request->title;
+        $fileUpload->slug = strtolower(str_replace(' ', '-', $request->title));
         $fileUpload->content = $content;
         $fileUpload->save();
 
         return redirect()->route('dashboard');
+    }
+
+
+    public function detail($slug)
+    {
+        $data['title']      = 'Detail Gallery Kegiatan';
+        $data['kegiatan']   = Kegiatan::where('slug', $slug)->first();
+
+        dd($data);
     }
 
     public function delete($id)

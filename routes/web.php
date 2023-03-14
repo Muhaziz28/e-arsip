@@ -32,4 +32,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/kegiatan/create', [KegiatanController::class, 'create'])->name('kegiatan.create');
     Route::post('/kegiatan/store', [KegiatanController::class, 'store'])->name('kegiatan.store');
     Route::get('/kegiatan/delete/{id}', [KegiatanController::class, 'delete'])->name('kegiatan.delete');
+    Route::get('/kegiatan/detail/{slug}', [KegiatanController::class, 'detail'])->name('kegiatan.detail');
 });

@@ -49,11 +49,17 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
+        $url = $request->session()->get('url.intended');
+
         $credentials = $request->only('email', 'password');
         // $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         if (Auth::attempt($credentials, true)) {
-            return to_route('dashboard');
+            if ($url == route('admin')) {
+                return redirect()->route('dashboard');
+            } else {
+                return redirect()->intended($url);
+            }
         }
 
         throw ValidationException::withMessages([

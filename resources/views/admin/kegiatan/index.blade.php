@@ -30,32 +30,24 @@
                                     </div>
                                     <h3 class="mt-1 mb-3">{{ $k->title }}</h3>
                                     <p class="mb-3">
-                                        {{
-                                            strip_tags(Str::limit($k->content, '100'))   
-                                        }}
+                                        {{ strip_tags(Str::limit($k->content, '100')) }}
                                     </p>
                                     <div class="mb-0 d-flex align-items-center justify-content-between">
                                         <span class="badge rounded-pill text-bg-warning">
                                             {{ $k->created_at->diffForHumans() }}
                                         </span>
-                                        <button class="btn btn-primary btn-sm rounded-pill " data-bs-toggle="modal" data-bs-target="#exampleModal{{ $k->id }}">Lihat</button>
+                                        <div class="btn-group">
+                                            <a href="{{ route('kegiatan.detail', $k->slug) }}" class="btn btn-outline-primary"><i class="align-middle" data-feather="eye"></i> Lihat</a>
+                                            <a href="{{ route('kegiatan.delete', $k->id) }}" class="btn btn-outline-danger"><i class="align-middle" data-feather="trash"></i> Hapus</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
-
-                        <!-- <div class="col-12"> -->
-
-
-
-
                         <ul class="pagination d-flex justify-content-center">
                             {{ $kegiatan->links()}}
                         </ul>
-
-                        <!-- </div> -->
-
                     </div>
                     @else
                     <p class="text-center">Belum ada kegiatan</p>
