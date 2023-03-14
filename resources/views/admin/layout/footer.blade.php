@@ -1,21 +1,27 @@
-<div class="footer pt-10 pb-5 d-flex flex-column flex-md-row flex-stack" id="kt_footer">
-    <!--begin::Copyright-->
-    <div class="text-dark order-2 order-md-1">
-        <span class="text-muted fw-semibold me-1">2022&copy;</span>
-        <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row text-muted">
+            <div class="col-6 text-start">
+                <p class="mb-0">
+                    <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a> &copy;
+                </p>
+            </div>
+            <div class="col-6 text-end">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <!--end::Copyright-->
-    <!--begin::Menu-->
-    <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-        <li class="menu-item">
-            <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-        </li>
-        <li class="menu-item">
-            <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-        </li>
-        <li class="menu-item">
-            <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link ps-2 pe-0">Purchase</a>
-        </li>
-    </ul>
-    <!--end::Menu-->
-</div>
+</footer>

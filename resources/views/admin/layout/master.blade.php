@@ -1,76 +1,77 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <base href="" />
-    <title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular & Laravel by Keenthemes</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{ asset('assets/img/icons/icon-48x48.png') }}" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.css') }}">
-    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <title>{{ $title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     @stack('css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+    <style>
+        .summernote.dir-rtl+.note-editor .note-editing-area {
+            direction: rtl !important;
+        }
+
+        .note-editor .dropdown-toggle::after {
+            all: unset;
+        }
+
+        .note-editor .note-dropdown-menu {
+            box-sizing: content-box;
+        }
+
+        .note-editor .note-modal-footer {
+            box-sizing: content-box;
+        }
+
+        /* Target Inner elements like this. Avoid adding classes. */
+        .summernote-content ul li {
+            color: red;
+        }
+
+        .summernote-content ul li::marker {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled sidebar-enabled">
+<body>
+    <div class="wrapper">
+        @include('admin.layout.sidebar')
 
-    <script>
-        var defaultThemeMode = "light";
-        var themeMode;
-        if (document.documentElement) {
-            if (document.documentElement.hasAttribute("data-theme-mode")) {
-                themeMode = document.documentElement.getAttribute("data-theme-mode");
-            } else {
-                if (localStorage.getItem("data-theme") !== null) {
-                    themeMode = localStorage.getItem("data-theme");
-                } else {
-                    themeMode = defaultThemeMode;
-                }
-            }
-            if (themeMode === "system") {
-                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            }
-            document.documentElement.setAttribute("data-theme", themeMode);
-        }
-    </script>
+        <div class="main">
+            @include('admin.layout.navbar')
 
-    <div class="d-flex flex-column flex-root">
-        <div class="page d-flex flex-column flex-column-fluid">
-            @include('admin.layout.header')
+            @yield('content')
 
-            <div id="kt_content_container" class="d-flex flex-column-fluid align-items-stretch container-xxl">
-                @include('admin.layout.sidebar')
-
-                <div class="wrapper d-flex flex-column flex-row-fluid mt-5 mt-lg-10" id="kt_wrapper">
-                    @yield('content')
-                    @include('admin.layout.footer')
-                </div>
-            </div>
+            @include('admin.layout.footer')
         </div>
     </div>
 
-    @include('admin.layout.scrolltop')
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    <script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+
     @stack('js')
-    <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
-    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+
 </body>
 
 </html>

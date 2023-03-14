@@ -9,13 +9,15 @@ class KegiatanController extends Controller
 {
     public function index()
     {
-        $data['kegiatan'] = Kegiatan::all();
+        $data['title']      = 'Data Gallery Kegiatan';
+        $data['kegiatan']   = Kegiatan::paginate(10);
         return view('admin.kegiatan.index', $data);
     }
 
     public function create()
     {
-        return view('admin.kegiatan.create');
+        $data['title']      = 'Tambah Gallery Kegiatan';
+        return view('admin.kegiatan.create', $data);
     }
 
     public function store(Request $request)
