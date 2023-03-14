@@ -9,7 +9,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data['kegiatan'] = Kegiatan::all();
+        $data['title']      = 'Dashboard';
+        $data['kegiatan']   = Kegiatan::all();
         return view('admin.dashboard', $data);
     }
 }

@@ -9,13 +9,15 @@ class KegiatanController extends Controller
 {
     public function index()
     {
-        $data['kegiatan'] = Kegiatan::all();
+        $data['title']      = 'Data Gallery Kegiatan';
+        $data['kegiatan']   = Kegiatan::paginate(10);
         return view('admin.kegiatan.index', $data);
     }
 
     public function create()
     {
-        return view('admin.kegiatan.create');
+        $data['title']      = 'Tambah Gallery Kegiatan';
+        return view('admin.kegiatan.create', $data);
     }
 
     public function store(Request $request)
@@ -30,7 +32,7 @@ class KegiatanController extends Controller
         $dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         $imageFile = $dom->getElementsByTagName('imageFile');
         foreach ($imageFile as $item => $image) {
-            $data = $img->getAttribute('src');
+            $data = $image->getAttribute('src');
             list($type, $data) = explode(';', $data);
             list(, $data)      = explode(',', $data);
             $imgeData = base64_decode($data);
@@ -47,8 +49,6 @@ class KegiatanController extends Controller
         $fileUpload->title = $request->title;
         $fileUpload->content = $content;
         $fileUpload->save();
-
-        // dd($content);
 
         return redirect()->route('dashboard');
     }
