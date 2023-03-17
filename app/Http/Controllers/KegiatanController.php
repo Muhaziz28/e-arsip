@@ -59,10 +59,17 @@ class KegiatanController extends Controller
             $image->setAttribute('src', $image_name);
         }
 
+        $slug = strtolower(str_replace(' ', '-', $request->title));
+        $cek_slug = Kegiatan::where('slug', $slug)->first();
+
+        if ($cek_slug) {
+            $slug = $slug . '-' . rand(1, 100);
+        }
+
         $content = $dom->saveHTML();
         $fileUpload = new Kegiatan();
         $fileUpload->title = $request->title;
-        $fileUpload->slug = strtolower(str_replace(' ', '-', $request->title));
+        $fileUpload->slug = $slug;
         $fileUpload->content = $content;
         $fileUpload->save();
 
@@ -111,7 +118,6 @@ class KegiatanController extends Controller
         $content = $dom->saveHTML();
         $fileUpload = Kegiatan::find($id);
         $fileUpload->title = $request->title;
-        $fileUpload->slug = strtolower(str_replace(' ', '-', $request->title)) . date('dMyh');
         $fileUpload->content = $content;
         $fileUpload->save();
 

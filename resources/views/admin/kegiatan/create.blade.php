@@ -45,7 +45,7 @@
 <script>
     $(document).ready(function() {
         $('.summernote').summernote({
-            height: "180",
+            height: "500",
             disableDragAndDrop: true,
             styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
 

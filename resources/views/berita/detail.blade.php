@@ -15,24 +15,27 @@
                     {!! $news->isi_berita !!}
                 </p>
             </div>
+            <hr class="mt-4 border-blueGray-300">
             <div class="flex flex-row justify-between px-4 py-3 bg-white rounded-b-lg">
                 <div class="flex flex-row items-center">
-                    <div class="flex flex-col ml-2">
-                        <span class="text-sm font-medium text-blueGray-700">Diposting oleh</span>
+                    <div class="flex flex-row items-center mr-3">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span class="text-sm text-blueGray-500">{{ $news->created_at }}</span>
+                    </div>
 
+                    <div class="flex flex-row items-center mr-3">
+                        <i class="fas fa-eye mr-2"></i>
+                        <span class="text-sm text-blueGray-500">100.000</span>
+                    </div>
+
+                    <div class="flex flex-row items-center mr-3">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span class="text-sm text-blueGray-500">{{ $news->created_at }}</span>
                     </div>
                 </div>
-                <div class="flex flex-row items-center">
-                    <div class="flex flex-col ml-2">
-                        <span class="text-sm font-medium text-blueGray-700">Tanggal</span>
-                        <span class="text-xs font-normal text-blueGray-400">{{ $news->created_at }}</span>
-                    </div>
-                </div>
-
             </div>
+            <hr class="border-blueGray-300">
         </div>
     </div>
-
-
 </div>
 @endsection

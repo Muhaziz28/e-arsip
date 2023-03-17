@@ -116,19 +116,11 @@ class BeritaController extends Controller
             $image->setAttribute('src', $image_name);
         }
 
-        $slug = strtolower(str_replace(' ', '-', $request->judul_berita));
-        $cek_slug = Berita::where('slug', $slug)->first();
-
-        if ($cek_slug) {
-            $slug = $slug . '-' . rand(1, 100);
-        }
-
 
         $isi_berita = $dom->saveHTML();
         $fileUpload = Berita::find($id);
         $fileUpload->judul_berita = $request->judul_berita;
         $fileUpload->isi_berita = $isi_berita;
-        $fileUpload->slug = $slug;
         $fileUpload->save();
 
         return redirect()->route('berita.index');
