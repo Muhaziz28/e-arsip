@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KegiatanController;
 use Illuminate\Support\Facades\Auth;
@@ -16,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
+Route::get('/news/{slug}', [BerandaController::class, 'berita'])->name('news.detail');
 
 Auth::routes();
 
@@ -33,4 +34,18 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/kegiatan/store', [KegiatanController::class, 'store'])->name('kegiatan.store');
     Route::get('/kegiatan/delete/{id}', [KegiatanController::class, 'delete'])->name('kegiatan.delete');
     Route::get('/kegiatan/detail/{slug}', [KegiatanController::class, 'detail'])->name('kegiatan.detail');
+    Route::post('/kegiatan/update/{id}', [KegiatanController::class, 'update'])->name('kegiatan.update');
+
+    Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
+    Route::get('/berita/create', [BeritaController::class, 'create'])->name('berita.create');
+    Route::post('/berita/store', [BeritaController::class, 'store'])->name('berita.store');
+    Route::get('/berita/delete/{id}', [BeritaController::class, 'delete'])->name('berita.delete');
+    Route::get('/berita/detail/{slug}', [BeritaController::class, 'detail'])->name('berita.detail');
+    Route::post('/berita/update/{id}', [BeritaController::class, 'update'])->name('berita.update');
+
+    // get list berita datatable
+    Route::get('/berita/getBeritaList', [BeritaController::class, 'getBeritaList'])->name('berita.getBeritaList');
+
+    // get list kegiatan datatable
+    Route::get('/kegiatan/getKegiatanList', [KegiatanController::class, 'getKegiatanList'])->name('kegiatan.getKegiatanList');
 });

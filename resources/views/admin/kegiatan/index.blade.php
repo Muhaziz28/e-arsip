@@ -10,51 +10,75 @@
         <div class="row">
             <div class="col-xl-12 col-xxl-12 d-flex">
                 <div class="w-100">
-                    @if ($kegiatan->count() > 0)
-                    <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <table class="table table-striped" id="kegiatan" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Kegiatan</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
 
-                        @foreach ($kegiatan as $k)
-                        <div class="col-sm-12">
-                            <div class="card ">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col mt-0">
-                                            <h5 class="card-title">#jjs</h5>
-                                        </div>
-
-                                        <!-- <div class="col-auto">
-                                            <div class="stat text-primary">
-                                                <i class="align-middle" data-feather="truck"></i>
-                                            </div>
-                                        </div> -->
-                                    </div>
-                                    <h3 class="mt-1 mb-3">{{ $k->title }}</h3>
-                                    <p class="mb-3">
-                                        {{ strip_tags(Str::limit($k->content, '100')) }}
-                                    </p>
-                                    <div class="mb-0 d-flex align-items-center justify-content-between">
-                                        <span class="badge rounded-pill text-bg-warning">
-                                            {{ $k->created_at->diffForHumans() }}
-                                        </span>
-                                        <div class="btn-group">
-                                            <a href="{{ route('kegiatan.detail', $k->slug) }}" class="btn btn-outline-primary"><i class="align-middle" data-feather="eye"></i> Lihat</a>
-                                            <a href="{{ route('kegiatan.delete', $k->id) }}" class="btn btn-outline-danger"><i class="align-middle" data-feather="trash"></i> Hapus</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        @endforeach
-                        <ul class="pagination d-flex justify-content-center">
-                            {{ $kegiatan->links()}}
-                        </ul>
                     </div>
-                    @else
-                    <p class="text-center">Belum ada kegiatan</p>
-                    @endif
                 </div>
             </div>
         </div>
     </div>
 </main>
 @endsection
+
+@push('js')
+<script>
+    $(function() {
+        var table = $('#kegiatan')
+
+        if (table.length) {
+            table.DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: {
+                    url: "{{ route('kegiatan.getKegiatanList') }}",
+                    type: "GET",
+                },
+                columns: [{
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
+                    },
+                    {
+                        data: 'title',
+                        name: 'title'
+                    },
+                    {
+                        data: 'created_at',
+                        name: 'created_at',
+                        render: function(data, type, row) {
+                            var date = new Date(data);
+                            var month = date.getMonth() + 1;
+                            var day = date.getDate();
+                            var year = date.getFullYear();
+                            var hours = date.getHours();
+                            var minutes = date.getMinutes();
+
+                            return day + '/' + month + '/' + year + '  ' + hours + ':' + minutes;
+                        }
+                    },
+
+                    {
+                        data: 'action',
+                        name: 'action'
+                    }
+                ]
+            })
+        }
+    })
+</script>
+@endpush

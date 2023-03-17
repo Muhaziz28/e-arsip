@@ -52,7 +52,6 @@ class LoginController extends Controller
         $url = $request->session()->get('url.intended');
 
         $credentials = $request->only('email', 'password');
-        // $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
         if (Auth::attempt($credentials, true)) {
             if ($url == route('admin')) {

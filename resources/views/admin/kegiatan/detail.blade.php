@@ -13,17 +13,19 @@
                         <div class="col-sm-12">
                             <div class="card ">
                                 <div class="card-body">
-                                    <form action="{{ route('kegiatan.store') }}" method="POST" enctype="multipart/form-data" id="for">
+                                    <form action="{{ route('kegiatan.update', $kegiatan->id) }}" method="POST" enctype="multipart/form-data">
                                         @csrf
 
                                         <div class="form-group">
                                             <label class="form-label">Judul Kegiatan</label>
-                                            <input type="text" class="form-control" name="title" id="title" placeholder="Input">
+                                            <input type="text" class="form-control" name="title" id="title" placeholder="Input" value="{{ $kegiatan->title }}">
                                         </div>
 
                                         <div class="form-group">
                                             <label class="form-label">Content</label>
-                                            <textarea class="form-control summernote" name="content" id="summernote" placeholder="Input"></textarea>
+                                            <textarea class="form-control summernote" name="content" id="summernote" placeholder="Input">
+                                            {{ $kegiatan->content }}
+                                            </textarea>
                                         </div>
                                         <div class="mb-0 d-flex align-items-center justify-content-between">
                                             <button class="btn btn-primary btn-sm" type="submit">Simpan</button>
