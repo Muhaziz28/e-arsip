@@ -9,9 +9,15 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        $data['berita'] = Berita::get();
+        $data['berita_terbaru'] = Berita::orderBy('created_at', 'desc')->limit(3)->get();
 
-        return view('welcome', $data);
+        return view('home', $data);
+    }
+
+    public function profile()
+    {
+
+        return view('profile');
     }
 
     public function berita($slug)

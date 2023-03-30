@@ -15,6 +15,12 @@
                 </a>
             </li>
 
+            <li class="sidebar-item {{ Request::is('admin/profile*') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('profile') }} ">
+                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Profile</span>
+                </a>
+            </li>
+
 
             <li class="sidebar-item {{ Request::is('admin/kegiatan*') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('kegiatan.index') }} ">

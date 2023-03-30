@@ -1,108 +1,38 @@
-<footer class="bg-black text-gray-400">
-    <!--Footer content-->
-    <div id="footer-content" class="relative pt-8 xl:pt-16 pb-6 xl:pb-12">
-        <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
-            <div class="flex flex-wrap flex-row lg:justify-between -mx-3">
-                <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
-                    <div class="flex items-center mb-2">
-                        <span class="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">DAP</span>
-                        <!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
-                    </div>
-                    <p>Tailwind News Template for build great newspapper, magazine and news portal.</p>
-                    <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
-                        <!--facebook-->
-                        <li class="inline-block">
-                            <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://facebook.com" title="Facebook">
-                                <!-- <i class="fab fa-facebook fa-2x"></i> -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                    <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <!--twitter-->
-                        <li class="inline-block">
-                            <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://twitter.com" title="Twitter">
-                                <!-- <i class="fab fa-twitter fa-2x"></i> -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                    <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <!--youtube-->
-                        <li class="inline-block">
-                            <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://youtube.com" title="Youtube">
-                                <!-- <i class="fab fa-youtube fa-2x"></i> -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                    <path fill="currentColor" d="M508.64,148.79c0-45-33.1-81.2-74-81.2C379.24,65,322.74,64,265,64H247c-57.6,0-114.2,1-169.6,3.6-40.8,0-73.9,36.4-73.9,81.4C1,184.59-.06,220.19,0,255.79q-.15,53.4,3.4,106.9c0,45,33.1,81.5,73.9,81.5,58.2,2.7,117.9,3.9,178.6,3.8q91.2.3,178.6-3.8c40.9,0,74-36.5,74-81.5,2.4-35.7,3.5-71.3,3.4-107Q512.24,202.29,508.64,148.79ZM207,353.89V157.39l145,98.2Z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <!--instagram-->
-                        <li class="inline-block">
-                            <a target="_blank" class="hover:text-gray-100" rel="noopener noreferrer" href="https://instagram.com" title="Instagram">
-                                <!-- <i class="fab fa-instagram fa-2x"></i> -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                    <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                    <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                    <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                </svg>
-                            </a>
-                        </li><!--end instagram-->
-                    </ul>
-                </div>
-                <div class="flex-shrink max-w-full w-full lg:w-3/5 px-3">
-                    <div class="flex flex-wrap flex-row">
-                        <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Product</h4>
-                            <ul>
-                                <li class="py-1 hover:text-white"><a href="#">Landing</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Pages</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Sections</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Sign Up</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Login</a></li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Support</h4>
-                            <ul>
-                                <li class="py-1 hover:text-white"><a href="#">Documentation</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Changelog</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Tools</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Icons</a></li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Includes</h4>
-                            <ul>
-                                <li class="py-1 hover:text-white"><a href="#">Utilities</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Components</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Example code</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Updates</a></li>
-                            </ul>
-                        </div>
-                        <div class="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-                            <h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Legal</h4>
-                            <ul>
-                                <li class="py-1 hover:text-white hover:text-white"><a href="#">Privacy Policy</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">Terms of Use</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">License</a></li>
-                                <li class="py-1 hover:text-white"><a href="#">GDPR</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ <section class=" h-full w-full border-box bg-white transition-all duration-500 linear">
+     <footer class="footer-4-2 h-full pt-16 pb-28 lg:px-28 md:px-16 px-8" style="font-family: 'Inter', sans-serif">
+         <hr class="mb-10" style="border-color: #D8E7FF;">
+         <div class="">
+             <div class="container flex justify-between items-center m-auto lg:flex-row flex-col-reverse space-y-reverse space-y-8 relative">
+                 <nav class="text-base flex items-center space-x-6 text-gray-1">
 
-
-    <div class="footer-dark">
-        <div class="container py-4 border-t border-gray-200 border-opacity-10">
-            <div class="row">
-                <div class="col-12 col-md text-center">
-                    <p class="d-block my-3">Copyright © Your Company | All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+                     <img src="{{ asset('logo.png') }}" class="w-10">
+                     <p class="text-gray-1">© {{ date('Y') }} Dinas Arsip dan Perpustakaan</p>
+                 </nav>
+                 <div class="topnav-centered">
+                     <p class="text-gray-1">
+                         Padang, Sumatera Barat
+                     </p>
+                 </div>
+                 <div class="lg:space-x-8">
+                     <div class="flex space-x-5">
+                         <a href="">
+                             <svg class="icon-footer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M13 19.938C15.0173 19.6813 16.8611 18.6661 18.1568 17.0988C19.4525 15.5314 20.1027 13.5295 19.9754 11.5C19.848 9.47041 18.9527 7.56549 17.4713 6.17238C15.9898 4.77927 14.0336 4.00252 12 4C9.96396 3.99848 8.00395 4.77334 6.51934 6.16668C5.03473 7.56002 4.13724 9.46699 4.00974 11.499C3.88225 13.5311 4.53434 15.5353 5.83314 17.1033C7.13195 18.6712 8.97974 19.685 11 19.938V14H9V12H11V10.346C11 9.009 11.14 8.524 11.4 8.035C11.6561 7.55119 12.052 7.15569 12.536 6.9C12.918 6.695 13.393 6.572 14.223 6.519C14.552 6.498 14.978 6.524 15.501 6.599V8.499H15C14.083 8.499 13.704 8.542 13.478 8.663C13.3431 8.73236 13.2334 8.84215 13.164 8.977C13.044 9.203 13 9.427 13 10.345V12H15.5L15 14H13V19.938ZM12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22Z" fill="#6681A9"></path>
+                             </svg>
+                         </a>
+                         <a href="">
+                             <svg class="icon-footer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M15.3 5.54999C14.54 5.54987 13.8103 5.84811 13.2679 6.38056C12.7256 6.913 12.4139 7.63709 12.4 8.39699L12.372 9.97199C12.3704 10.0566 12.3509 10.1398 12.3148 10.2163C12.2787 10.2928 12.2269 10.3608 12.1627 10.4159C12.0985 10.4709 12.0233 10.5118 11.9422 10.5358C11.8611 10.5597 11.7758 10.5663 11.692 10.555L10.131 10.343C8.07702 10.063 6.10902 9.11699 4.22102 7.54399C3.62302 10.854 4.79102 13.147 7.60402 14.916L9.35102 16.014C9.43403 16.0662 9.50299 16.1379 9.55187 16.2228C9.60075 16.3078 9.62806 16.4035 9.63141 16.5015C9.63477 16.5995 9.61407 16.6968 9.57111 16.7849C9.52816 16.873 9.46426 16.9493 9.38502 17.007L7.79302 18.17C8.74002 18.229 9.63902 18.187 10.385 18.039C15.103 17.097 18.24 13.547 18.24 7.69099C18.24 7.21299 17.228 5.54999 15.3 5.54999ZM10.4 8.35999C10.4175 7.39604 10.7189 6.45866 11.2666 5.66521C11.8142 4.87177 12.5838 4.25751 13.4789 3.89936C14.3741 3.54121 15.3549 3.45507 16.2988 3.65174C17.2426 3.84841 18.1074 4.31914 18.785 5.00499C19.496 4.99999 20.101 5.17999 21.454 4.35999C21.119 5.99999 20.954 6.71199 20.24 7.69099C20.24 15.333 15.543 19.049 10.777 20C7.50902 20.652 2.75702 19.581 1.39502 18.159C2.08902 18.105 4.90902 17.802 6.53902 16.609C5.16002 15.7 -0.32898 12.47 3.27802 3.78599C4.97102 5.76299 6.68802 7.10899 8.42802 7.82299C9.58602 8.29799 9.87002 8.28799 10.401 8.36099L10.4 8.35999Z" fill="#6681A9"></path>
+                             </svg>
+                         </a>
+                         <a href="">
+                             <svg class="icon-footer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9ZM12 7C13.3261 7 14.5979 7.52678 15.5355 8.46447C16.4732 9.40215 17 10.6739 17 12C17 13.3261 16.4732 14.5979 15.5355 15.5355C14.5979 16.4732 13.3261 17 12 17C10.6739 17 9.40215 16.4732 8.46447 15.5355C7.52678 14.5979 7 13.3261 7 12C7 10.6739 7.52678 9.40215 8.46447 8.46447C9.40215 7.52678 10.6739 7 12 7ZM18.5 6.75C18.5 7.08152 18.3683 7.39946 18.1339 7.63388C17.8995 7.8683 17.5815 8 17.25 8C16.9185 8 16.6005 7.8683 16.3661 7.63388C16.1317 7.39946 16 7.08152 16 6.75C16 6.41848 16.1317 6.10054 16.3661 5.86612C16.6005 5.6317 16.9185 5.5 17.25 5.5C17.5815 5.5 17.8995 5.6317 18.1339 5.86612C18.3683 6.10054 18.5 6.41848 18.5 6.75ZM12 4C9.526 4 9.122 4.007 7.971 4.058C7.187 4.095 6.661 4.2 6.173 4.39C5.739 4.558 5.426 4.759 5.093 5.093C4.78001 5.3954 4.53935 5.76458 4.389 6.173C4.199 6.663 4.094 7.188 4.058 7.971C4.006 9.075 4 9.461 4 12C4 14.474 4.007 14.878 4.058 16.029C4.095 16.812 4.2 17.339 4.389 17.826C4.559 18.261 4.759 18.574 5.091 18.906C5.428 19.242 5.741 19.443 6.171 19.609C6.665 19.8 7.191 19.906 7.971 19.942C9.075 19.994 9.461 20 12 20C14.474 20 14.878 19.993 16.029 19.942C16.811 19.905 17.338 19.8 17.826 19.611C18.259 19.442 18.574 19.241 18.906 18.909C19.243 18.572 19.444 18.259 19.61 17.829C19.8 17.336 19.906 16.809 19.942 16.029C19.994 14.925 20 14.539 20 12C20 9.526 19.993 9.122 19.942 7.971C19.905 7.189 19.8 6.661 19.61 6.173C19.4593 5.765 19.2191 5.39596 18.907 5.093C18.6047 4.77985 18.2355 4.53917 17.827 4.389C17.337 4.199 16.811 4.094 16.029 4.058C14.925 4.006 14.539 4 12 4ZM12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2Z" fill="#6681A9"></path>
+                             </svg>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </footer>
+ </section>
