@@ -149,9 +149,9 @@
             </nav>
         </div>
         <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-            <button class="btn-register text-white items-center border-0 py-4 px-8 focus:outline-none rounded-2xl font-medium text-sm mt-6 lg:mt-0">
+            <a class="btn-register text-white items-center border-0 py-4 px-8 focus:outline-none rounded-2xl font-medium text-sm mt-6 lg:mt-0" href="{{ route('login') }}">
                 Login
-            </button>
+            </a>
         </div>
     </header>
 

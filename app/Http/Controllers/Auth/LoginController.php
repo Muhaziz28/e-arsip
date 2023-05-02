@@ -54,10 +54,14 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials, true)) {
-            if ($url == route('admin')) {
-                return redirect()->route('dashboard');
+            if ($url != null) {
+                if ($url == route('admin')) {
+                    return redirect()->route('dashboard');
+                } else {
+                    return redirect()->intended($url);
+                }
             } else {
-                return redirect()->intended($url);
+                return redirect()->route('dashboard');
             }
         }
 

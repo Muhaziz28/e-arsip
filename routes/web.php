@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArsipSettingController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
@@ -52,4 +53,25 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     // get list kegiatan datatable
     Route::get('/kegiatan/getKegiatanList', [KegiatanController::class, 'getKegiatanList'])->name('kegiatan.getKegiatanList');
+
+    // === route arsip setting ===
+    // tingkat perkembangan
+    Route::get('/arsip-setting/getTingkatPerkembangan', [ArsipSettingController::class, 'getTingkatPerkembangan'])->name('arsip-setting.getTingkatPerkembangan');
+    Route::get('/arsip-setting', [ArsipSettingController::class, 'index'])->name('arsip-setting.index');
+    Route::post('/arsip-setting/createTingkatPerkembangan', [ArsipSettingController::class, 'createTingkatPerkembangan'])->name('arsip-setting.createTingkatPerkembangan');
+    Route::post('/arsip-setting/showTingkatPerkembangan', [ArsipSettingController::class, 'showTingkatPerkembangan'])->name('arsip-setting.showTingkatPerkembangan');
+    Route::put('/arsip-setting/updateTingkatPerkembangan', [ArsipSettingController::class, 'updateTingkatPerkembangan'])->name('arsip-setting.updateTingkatPerkembangan');
+    Route::delete('/arsip-setting/deleteTingkatPerkembangan', [ArsipSettingController::class, 'deleteTingkatPerkembangan'])->name('arsip-setting.deleteTingkatPerkembangan');
+    // bentuk arsip
+    Route::get('/arsip-setting/getBentuk', [ArsipSettingController::class, 'getBentuk'])->name('arsip-setting.getBentuk');
+    Route::post('/arsip-setting/createBentuk', [ArsipSettingController::class, 'createBentuk'])->name('arsip-setting.createBentuk');
+    Route::post('/arsip-setting/showBentuk', [ArsipSettingController::class, 'showBentuk'])->name('arsip-setting.showBentuk');
+    Route::put('/arsip-setting/updateBentuk', [ArsipSettingController::class, 'updateBentuk'])->name('arsip-setting.updateBentuk');
+    Route::delete('/arsip-setting/deleteBentuk', [ArsipSettingController::class, 'deleteBentuk'])->name('arsip-setting.deleteBentuk');
+    // keterangan arsip
+    Route::get('/arsip-setting/getKeterangan', [ArsipSettingController::class, 'getKeterangan'])->name('arsip-setting.getKeterangan');
+    Route::post('/arsip-setting/createKeterangan', [ArsipSettingController::class, 'createKeterangan'])->name('arsip-setting.createKeterangan');
+    Route::post('/arsip-setting/showKeterangan', [ArsipSettingController::class, 'showKeterangan'])->name('arsip-setting.showKeterangan');
+    Route::put('/arsip-setting/updateKeterangan', [ArsipSettingController::class, 'updateKeterangan'])->name('arsip-setting.updateKeterangan');
+    Route::delete('/arsip-setting/deleteKeterangan', [ArsipSettingController::class, 'deleteKeterangan'])->name('arsip-setting.deleteKeterangan');
 });

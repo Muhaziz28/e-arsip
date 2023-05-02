@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/icons/icon-48x48.png') }}" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
@@ -70,7 +70,9 @@
             @include('admin.layout.footer')
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/aeb56c9891.js" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     @stack('js')
