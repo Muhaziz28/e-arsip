@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         $data['profile'] = Profile::get();
         $data['title'] = 'Profile';
-        // dd($data['profile']);
+
         return view('admin.profile.index', $data);
     }
 
@@ -25,7 +25,6 @@ class ProfileController extends Controller
         $cekProfile = Profile::all();
 
         if ($cekProfile->count() > 1) {
-            // hapus semua data profile di databse
             Profile::truncate();
 
             $profile = $request->profile;

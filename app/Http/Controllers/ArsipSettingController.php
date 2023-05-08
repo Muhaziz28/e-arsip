@@ -15,12 +15,14 @@ class ArsipSettingController extends Controller
     public function index()
     {
         $data['title']      = 'Arsip Setting';
+
         return view('admin.arsip-setting.index', $data);
     }
 
     public function getTingkatPerkembangan()
     {
         $perkembangan = TingkatPerkembangan::get();
+
         return Datatables::of($perkembangan)
             ->addIndexColumn()
             ->addColumn('action', function ($perkembangan) {
@@ -38,10 +40,13 @@ class ArsipSettingController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_tingkat_perkembangan' => 'required',
         ]);
+
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = TingkatPerkembangan::where('nama_tingkat_perkembangan', $request->nama_tingkat_perkembangan)->first();
+
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada']);
         }
@@ -60,6 +65,7 @@ class ArsipSettingController extends Controller
     public function showTingkatPerkembangan(Request $request)
     {
         $tingkat_perkembangan = TingkatPerkembangan::find($request->id);
+
         return response()->json([
             'status' => Response::HTTP_OK,
             'data'   => $tingkat_perkembangan
@@ -71,9 +77,11 @@ class ArsipSettingController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_tingkat_perkembangan' => ['required'],
         ]);
+
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = TingkatPerkembangan::where('nama_tingkat_perkembangan', $request->nama_tingkat_perkembangan)->first();
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada', 'data' => $cek]);
@@ -96,6 +104,7 @@ class ArsipSettingController extends Controller
     {
         try {
             TingkatPerkembangan::where('id', $request->id)->delete();
+
             return response()->json(['code' => 1, 'msg' => 'Data berhasil dihapus']);
         } catch (\Throwable $th) {
             return response()->json(['code' => 0, 'msg' => 'Data gagal dihapus']);
@@ -105,6 +114,7 @@ class ArsipSettingController extends Controller
     public function getBentuk()
     {
         $bentuk = Bentuk::get();
+
         return Datatables::of($bentuk)
             ->addIndexColumn()
             ->addColumn('action', function ($bentuk) {
@@ -125,6 +135,7 @@ class ArsipSettingController extends Controller
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = Bentuk::where('nama_bentuk', $request->nama_bentuk)->first();
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada']);
@@ -144,6 +155,7 @@ class ArsipSettingController extends Controller
     public function showBentuk(Request $request)
     {
         $bentuk = Bentuk::find($request->id);
+
         return response()->json([
             'status' => Response::HTTP_OK,
             'data'   => $bentuk
@@ -158,10 +170,12 @@ class ArsipSettingController extends Controller
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = Bentuk::where('nama_bentuk', $request->nama_bentuk)->first();
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada', 'data' => $cek]);
         }
+
         try {
             $bentuk = Bentuk::find($request->id);
             $bentuk->update([
@@ -178,6 +192,7 @@ class ArsipSettingController extends Controller
     {
         try {
             Bentuk::where('id', $request->id)->delete();
+
             return response()->json(['code' => 1, 'msg' => 'Data berhasil dihapus']);
         } catch (\Throwable $th) {
             return response()->json(['code' => 0, 'msg' => 'Data gagal dihapus']);
@@ -187,6 +202,7 @@ class ArsipSettingController extends Controller
     public function getKeterangan()
     {
         $keterangan = Keterangan::get();
+
         return Datatables::of($keterangan)
             ->addIndexColumn()
             ->addColumn('action', function ($keterangan) {
@@ -207,6 +223,7 @@ class ArsipSettingController extends Controller
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = Keterangan::where('nama_keterangan', $request->nama_keterangan)->first();
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada']);
@@ -226,6 +243,7 @@ class ArsipSettingController extends Controller
     public function showKeterangan(Request $request)
     {
         $keterangan = Keterangan::find($request->id);
+
         return response()->json([
             'status' => Response::HTTP_OK,
             'data'   => $keterangan
@@ -240,10 +258,12 @@ class ArsipSettingController extends Controller
         if ($validator->fails()) {
             return response()->json(['code' => 0, 'msg' => 'Data tidak boleh kosong']);
         }
+
         $cek = Keterangan::where('nama_keterangan', $request->nama_keterangan)->first();
         if ($cek) {
             return response()->json(['code' => 0, 'msg' => 'Data sudah ada', 'data' => $cek]);
         }
+
         try {
             $keterangan = Keterangan::find($request->id);
             $keterangan->update([
@@ -260,6 +280,7 @@ class ArsipSettingController extends Controller
     {
         try {
             Keterangan::where('id', $request->id)->delete();
+
             return response()->json(['code' => 1, 'msg' => 'Data berhasil dihapus']);
         } catch (\Throwable $th) {
             return response()->json(['code' => 0, 'msg' => 'Data gagal dihapus']);

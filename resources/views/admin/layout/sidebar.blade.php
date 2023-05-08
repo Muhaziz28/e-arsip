@@ -38,12 +38,12 @@
                 Arsip
             </li>
 
-            <li class="sidebar-item">
-                <a class="sidebar-link" href="ui-buttons.html">
+            <li class="sidebar-item {{ Request::is('admin/arsip') ? 'active' : '' }}">
+                <a class="sidebar-link" href="{{ route('arsip.index') }}">
                     <i class="align-middle" data-feather="square"></i> <span class="align-middle">Arsip</span>
                 </a>
             </li>
-            <li class="sidebar-item {{ Request::is('admin/arsip-setting*') ? 'active' : '' }}">
+            <li class="sidebar-item {{ Request::is('admin/arsip-setting') ? 'active' : '' }}">
                 <a class="sidebar-link" href="{{ route('arsip-setting.index') }}">
                     <i class="align-middle" data-feather="square"></i> <span class="align-middle">Arsip Setting</span>
                 </a>

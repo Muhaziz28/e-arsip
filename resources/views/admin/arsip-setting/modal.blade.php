@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <input type="text" name="id" id="id">
+                    <input type="hidden" name="id" id="id">
                     <button type="button" class="btn btn-default" data-bs-dismiss="modal">Tutup</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>

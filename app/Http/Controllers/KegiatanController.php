@@ -11,12 +11,14 @@ class KegiatanController extends Controller
     public function index()
     {
         $data['title']      = 'Data Gallery Kegiatan';
+
         return view('admin.kegiatan.index', $data);
     }
 
     public function getKegiatanList()
     {
         $kegiatan = Kegiatan::get();
+
         return Datatables::of($kegiatan)
             ->addIndexColumn()
             ->addColumn('action', function ($kegiatan) {
@@ -32,6 +34,7 @@ class KegiatanController extends Controller
     public function create()
     {
         $data['title']      = 'Tambah Gallery Kegiatan';
+
         return view('admin.kegiatan.create', $data);
     }
 
@@ -88,6 +91,7 @@ class KegiatanController extends Controller
     {
         $kegiatan = Kegiatan::find($id);
         $kegiatan->delete();
+
         return redirect()->route('kegiatan.index');
     }
 

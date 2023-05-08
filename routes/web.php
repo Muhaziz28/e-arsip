@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\ArsipSettingController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
@@ -74,4 +75,15 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/arsip-setting/showKeterangan', [ArsipSettingController::class, 'showKeterangan'])->name('arsip-setting.showKeterangan');
     Route::put('/arsip-setting/updateKeterangan', [ArsipSettingController::class, 'updateKeterangan'])->name('arsip-setting.updateKeterangan');
     Route::delete('/arsip-setting/deleteKeterangan', [ArsipSettingController::class, 'deleteKeterangan'])->name('arsip-setting.deleteKeterangan');
+    // arsip
+    Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip.index');
+    Route::get('/arsip/add', [ArsipController::class, 'createArsip'])->name('arsip.add');
+    Route::get('/arsip/getArsip', [ArsipController::class, 'getArsip'])->name('arsip.getArsip');
+    Route::get('/arsip/getTingkatPerkembangan', [ArsipController::class, 'getTingkatPerkembangan'])->name('arsip.getTingkatPerkembangan');
+    Route::get('/arsip/getKeterangan', [ArsipController::class, 'getKeterangan'])->name('arsip.getKeterangan');
+    Route::get('/arsip/getBentuk', [ArsipController::class, 'getBentuk'])->name('arsip.getBentuk');
+    Route::get('/arsip/getIndeks', [ArsipController::class, 'getIndeks'])->name('arsip.getIndeks');
+    Route::post('/arsip/store', [ArsipController::class, 'store'])->name('arsip.store');
+    // export arsip
+    Route::get('/arsip/exportExcel', [ArsipController::class, 'exportExcel'])->name('arsip.exportExcel');
 });

@@ -12,12 +12,14 @@ class BeritaController extends Controller
     public function index()
     {
         $data['title']      = 'Data Berita';
+
         return view('admin.berita.index', $data);
     }
 
     public function getBeritaList()
     {
         $berita = Berita::get();
+
         return Datatables::of($berita)
             ->addIndexColumn()
             ->addColumn('action', function ($berita) {
@@ -33,6 +35,7 @@ class BeritaController extends Controller
     public function create()
     {
         $data['title']      = 'Tambah Berita Baru';
+
         return view('admin.berita.create', $data);
     }
 
@@ -89,6 +92,7 @@ class BeritaController extends Controller
     {
         $berita = Berita::find($id);
         $berita->delete();
+
         return redirect()->route('berita.index');
     }
 
@@ -115,7 +119,6 @@ class BeritaController extends Controller
             $image->removeAttribute('src');
             $image->setAttribute('src', $image_name);
         }
-
 
         $isi_berita = $dom->saveHTML();
         $fileUpload = Berita::find($id);
